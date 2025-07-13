@@ -1,4 +1,4 @@
-import "./form.css";
+// import "./form.css";
 const allType = ["register", "login"];
 const RegLogForm = ({ type }) => {
   if (!allType.includes(type)) throw new Error("invalid type: " + type);
@@ -37,7 +37,7 @@ const RegLogForm = ({ type }) => {
             placeholder="Create your password"
           />
         </div>
-        <button className="bg-blue-500 capitalize py-2 w-25 rounded-2xl mt-7 mx-auto grid place-content-center">
+        <button className="bg-blue-500 capitalize py-2 w-25 rounded-2xl mt-7 mx-auto grid place-content-center hover:bg-blue-300 active:bg-blue-800">
           {type}
         </button>
       </div>

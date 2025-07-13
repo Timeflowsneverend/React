@@ -14,7 +14,7 @@ const Bulb = () => {
       <div
         onClick={() => setState(!state)}
         className={merge(
-          " overflow-hidden relative size-16 animate-in hover:shadow-2xl zoom-in  select-none cursor-pointer duration-300 px-10 py-5 rounded-2xl ",
+          "overflow-hidden relative size-16 animate-in hover:shadow-2xl zoom-in  select-none cursor-pointer duration-300 px-10 py-5 rounded-2xl ",
           !state
             ? "hover:bg-slate-800 text-slate-50 bg-slate-950"
             : "hover:bg-slate-300 bg-slate-50 hover:shadow-white text-slate-900"

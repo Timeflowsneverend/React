@@ -1,0 +1,11 @@
+@import "tailwindcss";
+li {
+  @apply hover:text-blue-600;
+}
+* {
+  @apply select-none;
+}
+/* 
+button {
+  @apply hover:bg-gray-500;
+} */
