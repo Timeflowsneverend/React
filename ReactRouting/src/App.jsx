@@ -47,27 +47,78 @@
 
 // export default App;
 
-import { useNavigate } from "react-router-dom";
-import Button from "./components/Button";
+// import { useNavigate } from "react-router-dom";
+// import Button from "./components/Button";
 
-function App() {
-  const navigate = useNavigate();
+// function App() {
+//   const navigate = useNavigate();
 
-  const goToProfile = () => {
-    navigate("/profile", {
-      state: { userId: 123 },
-    });
+//   const goToProfile = () => {
+//     navigate("/profile", {
+//       state: { userId: 123 },
+//     });
+//   };
+//   return (
+//     <div>
+//       <h1>Home Page</h1>
+//       <Button
+//         text="Go to Profile"
+//         bgColor="bg-blue-400"
+//         textColor="text-white"
+//         onClick={goToProfile}
+//       />
+//     </div>
+//   );
+// }
+// export default App;
+
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import NotFound from "./pages/NotFound";
+import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
+
+const App = () => {
+  const Layout = () => {
+    return (
+      <>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </>
+    );
   };
+  const pageRoute = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "",
+          element: <HomePage />,
+        },
+        {
+          path: "/contact",
+          element: <ContactPage />,
+        },
+        {
+          path: "/about",
+          element: <AboutPage />,
+        },
+      ],
+    },
+    {
+      path: "*",
+      element: <NotFound />,
+    },
+  ]);
   return (
-    <div>
-      <h1>Home Page</h1>
-      <Button
-        text="Go to Profile"
-        bgColor="bg-blue-400"
-        textColor="text-white"
-        onClick={goToProfile}
-      />
-    </div>
+    <>
+      <RouterProvider router={pageRoute} />
+    </>
   );
-}
+};
+
 export default App;
