@@ -3,9 +3,35 @@ li {
   @apply hover:text-blue-600;
 }
 * {
-  @apply select-none;
+  @apply select-none transition-all duration-300 ease-in-out;
 }
+:root {
+  color-scheme: dark light;
+  --dark: black;
+  --light: white;
+  /* --dark: darkslategrey;
+  --light: beige; */
+  --fg: light-dark(var(--dark), var(--light));
+  --bg: light-dark(var(--light), var(--dark));
+  color: var(--fg);
+  background: var(--bg);
+}
+/* h1 {
+  font-size: 2rem;
+} */
+
 /* 
 button {
   @apply hover:bg-gray-500;
-} */
+  } */
+
+:root:has(input[id="theme"]:checked) {
+  color-scheme: dark;
+}
+:root:has(input[id="theme"]:not(:checked)) {
+  color-scheme: light;
+}
+
+li {
+  list-style: none;
+}

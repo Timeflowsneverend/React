@@ -79,6 +79,7 @@ import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
+import TestPage from "./pages/TestPage";
 
 const App = () => {
   const Layout = () => {
@@ -113,6 +114,10 @@ const App = () => {
       path: "*",
       element: <NotFound />,
     },
+    {
+      path: "/test",
+      element: <TestPage />,
+    },
   ]);
   return (
     <>
@@ -122,3 +127,15 @@ const App = () => {
 };
 
 export default App;
+
+// import Toggle from "./components/Toggle";
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Toggle />
+//     </div>
+//   );
+// };
+
+// export default App;
