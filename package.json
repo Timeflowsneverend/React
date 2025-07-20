@@ -1,0 +1,14 @@
+{  "name": "react-monorepo",
+  "private": true,
+  "workspaces": [
+    "ConditionalOperation",
+    "ReactRouting"
+  ],
+  "scripts": {
+    "build:ConditionalOperation": "pnpm --filter ConditionalOperation run build",
+    "build:ReactRouting": "pnpm --filter ReactRouting run build",
+    "copy:ConditionalOperation": "rm -rf docs/ConditionalOperation && cp -r ConditionalOperation/dist docs/ConditionalOperation",
+    "copy:ReactRouting": "rm -rf docs/ReactRouting && cp -r ReactRouting/dist docs/ReactRouting",
+    "build:all": "pnpm run build:ConditionalOperation && pnpm run build:ReactRouting && pnpm run copy:ConditionalOperation && pnpm run copy:ReactRouting"
+  }
+}

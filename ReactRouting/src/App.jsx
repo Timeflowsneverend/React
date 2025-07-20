@@ -72,7 +72,7 @@
 // }
 // export default App;
 
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+// import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -80,6 +80,53 @@ import NotFound from "./pages/NotFound";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import TestPage from "./pages/TestPage";
+
+// const App = () => {
+//   const Layout = () => {
+//     return (
+//       <>
+//         <Navbar />
+//         <Outlet />
+//         <Footer />
+//       </>
+//     );
+//   };
+//   const pageRoute = createBrowserRouter([
+//     {
+//       path: "/",
+//       element: <Layout />,
+//       children: [
+//         {
+//           path: "",
+//           element: <HomePage />,
+//         },
+//         {
+//           path: "/contact",
+//           element: <ContactPage />,
+//         },
+//         {
+//           path: "/about",
+//           element: <AboutPage />,
+//         },
+//       ],
+//     },
+//     {
+//       path: "*",
+//       element: <NotFound />,
+//     },
+//     {
+//       path: "/test",
+//       element: <TestPage />,
+//     },
+//   ]);
+//   return (
+//     <>
+//       <RouterProvider router={pageRoute} />
+//     </>
+//   );
+// };
+
+import { HashRouter, Routes, Route, Outlet } from "react-router-dom";
 
 const App = () => {
   const Layout = () => {
@@ -91,38 +138,19 @@ const App = () => {
       </>
     );
   };
-  const pageRoute = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />,
-      children: [
-        {
-          path: "",
-          element: <HomePage />,
-        },
-        {
-          path: "/contact",
-          element: <ContactPage />,
-        },
-        {
-          path: "/about",
-          element: <AboutPage />,
-        },
-      ],
-    },
-    {
-      path: "*",
-      element: <NotFound />,
-    },
-    {
-      path: "/test",
-      element: <TestPage />,
-    },
-  ]);
+
   return (
-    <>
-      <RouterProvider router={pageRoute} />
-    </>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="about" element={<AboutPage />} />
+        </Route>
+        <Route path="/test" element={<TestPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </HashRouter>
   );
 };
 
