@@ -1,3 +1,5 @@
 packages:
   - "ConditionalOperation"
   - "ReactRouting"
+  - "Hooks"
+  - "Icons"
