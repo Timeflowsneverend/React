@@ -18,7 +18,7 @@ const App = () => {
   return (
     // <ErrorBoundary fallback={<FallbackRender />} onError={logError}>
     // </ErrorBoundary>
-    <RegLogForm type="register" />
+    <RegLogForm type="login" />
   );
 };
 

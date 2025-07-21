@@ -62,9 +62,10 @@
 // export default TestPage;
 
 import React, { useState } from "react";
-import { navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const TestPage = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",
     password: "",
