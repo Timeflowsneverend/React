@@ -1,5 +1,10 @@
 # React
+## Links
+https://timeflowsneverend.github.io/React/ConditionalOperation/
+https://timeflowsneverend.github.io/React/ReactRouting/
 
+## Structure
+```
 React/
 pnpm-workspace.yaml
 package.json
@@ -19,3 +24,4 @@ Hooks/
 ...
 Icons/
 ...
+```
