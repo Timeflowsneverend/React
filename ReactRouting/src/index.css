@@ -9,10 +9,12 @@ li {
   color-scheme: dark light;
   --dark: black;
   --light: white;
-  /* --dark: darkslategrey;
-  --light: beige; */
+  --lte-dark: darkslategrey;
+  --lte-light: beige;
   --fg: light-dark(var(--dark), var(--light));
   --bg: light-dark(var(--light), var(--dark));
+  --lbg: light-dark(var(--lte-light), var(--lte-dark));
+  --lfg: light-dark(var(--lte-dark), var(--lte-light));
   color: var(--fg);
   background: var(--bg);
 }
@@ -34,4 +36,11 @@ button {
 
 li {
   list-style: none;
+}
+.text-outline {
+  -webkit-text-stroke: 2px var(--fg);
+  color: var(--bg);
+  /* Optional: for browsers that don't support text-stroke */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }

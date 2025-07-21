@@ -1,4 +1,4 @@
-const HeroSection = ({ data }) => {
+const HeroSection = ({ data, email }) => {
   return (
     <div className="relative h-[80vh] w-full">
       <img
@@ -11,8 +11,8 @@ const HeroSection = ({ data }) => {
       {/* <div className="absolute inset-0 bg-black bg-opacity-50" /> */}
 
       {/* Centered text */}
-      <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl sm:text-5xl text-center w-100 ">
-        Hello world {data}
+      <h1 className="flex flex-col absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  text-3xl sm:text-5xl text-center gap-3 text-outline">
+        <p>Hello world</p> <p>{data}</p> <p>{email}</p>
       </h1>
     </div>
   );

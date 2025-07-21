@@ -19,8 +19,8 @@ const ThemeToggle = () => {
         } rounded-full relative`}
       >
         <div
-          className={`h-full w-[28px] border-2 ${
-            !set ? "border-white bg-white" : "border-black bg-black"
+          className={`h-full w-[28px] border ${
+            !set ? "border-black bg-white" : "border-white bg-black"
           } rounded-full left-0 absolute transition-all duration-400   ${
             !set ? "translate-x-[2.5rem]" : "translate-x-0"
           }`}
