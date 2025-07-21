@@ -12,9 +12,11 @@ const HomePage = () => {
   }, []);
   return (
     <div>
-      HomePages Welcome
-      {email}
-      <HeroSection data={text} />
+      {/* <div className="flex gap-1.5">
+        <p>HomePages Welcome</p>
+        <p>{email}</p>
+      </div> */}
+      <HeroSection data={text} email={email} />
       <Slider />
     </div>
   );

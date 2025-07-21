@@ -61,11 +61,13 @@
 
 // export default TestPage;
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ContextAPI } from "../components/Context";
 
 const TestPage = () => {
   const navigate = useNavigate();
+  const { setFlag } = useContext(ContextAPI);
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -77,7 +79,8 @@ const TestPage = () => {
     } else {
       localStorage.setItem("email", data.email);
       alert("Form submitted successfully");
-      navigate("/");
+      setFlag((e) => e + 1);
+      navigate("/home");
     }
   };
 
@@ -102,10 +105,10 @@ const TestPage = () => {
 
   return (
     <div>
-      <div className="demo flex flex-col border">
+      {/* <div className="demo flex flex-col border">
         <p>{data.email}</p>
         <p>{data.password}</p>
-      </div>
+      </div> */}
       <div className="h-[80vh] grid place-items-center">
         <form
           action={handleFormSubmit}
@@ -126,7 +129,7 @@ const TestPage = () => {
           })}
           <button
             type="submit"
-            className="active:bg-gray-800 text-2xl px-3 py-2 rounded text-white transition duration-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="active:bg-gray-800 text-2xl px-3 py-2 rounded transition duration-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 border"
           >
             Submit
           </button>
