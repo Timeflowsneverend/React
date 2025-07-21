@@ -31,7 +31,7 @@ const App = () => {
     );
   };
   return (
-    <Router>
+    <Router basename="/React/ReactRouting">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/test" replace />} />
